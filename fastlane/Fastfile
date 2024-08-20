@@ -25,8 +25,18 @@ platform :android do
     desc "Deploy a new version to the Google Play Store"
     lane :deploy do
       gradle(task: "clean assembleRelease")
+       # Decode the Base64 encoded JSON from the environment variable
+      base64_data = ENV['KEYSTORE_PASSWORD'] # The Base64 encoded string stored in an environment variable
+
+      # Decode the Base64 string
+      json_data = Base64.decode64(base64_data)
+
+      # Write the decoded JSON data to a file
+      File.open("fastlane-key.json", "w") do |file|
+        file.write(json_data)
+      end
       supply(
-        json_key_data: Base64.decode64(ENV['KEYSTORE_PASSWORD']),
+        json_key: "fastlane-key.json",
         track: "alpha", # or 'beta', 'alpha', 'internal', etc.
 #         aab: "app/build/outputs/bundle/release/app-release.aab" # or
         apk: "app/build/outputs/apk/release/app-release-unsigned.apk"
