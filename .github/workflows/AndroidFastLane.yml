@@ -31,8 +31,7 @@ jobs:
 
       - name: Install Ruby and Fastlane
         run: |
-          sudo apt-get update
-          sudo apt-get install ruby-full
+          brew install ruby@3.0
           homebrew install fastlane
 
       - name: Run Fastlane lane
