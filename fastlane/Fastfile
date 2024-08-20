@@ -44,7 +44,7 @@ platform :android do
       UI.message File.read("fastlane-key.json")
 
       supply(
-        json_key: "fastlane-key.json",
+        json_key: "fastlane/fastlane-key.json",
         track: "alpha", # or 'beta', 'alpha', 'internal', etc.
 #         aab: "app/build/outputs/bundle/release/app-release.aab" # or
         apk: "app/build/outputs/apk/release/app-release-unsigned.apk"
