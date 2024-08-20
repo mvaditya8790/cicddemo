@@ -44,9 +44,9 @@ jobs:
         env:
           SUPPLY_JSON_KEY: $HOME/fastlane-key.json
 
-#      - name: Upload artifacts
-#        if: success()
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: app-release.apk
-#          path: app/build/outputs/apk/release/app-release.apk
+      - name: Upload artifacts
+        if: success()
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-release.aab
+          path: app/build/outputs/bundle/release/app-release.aab
