@@ -1,2 +1,2 @@
-json_key_file("") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+json_key_file("/Users/adityamusunuru/Downloads/cicddemo-433110-9e343a931a26.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 package_name("com.aditya.cicddemo") # e.g. com.krausefx.app

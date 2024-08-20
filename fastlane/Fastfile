@@ -16,10 +16,10 @@
 default_platform(:android)
 
 platform :android do
-    desc "Build the Android app"
-    lane :build do
-      gradle(task: "assembleDebug")
-    end
+#     desc "Build the Android app"
+#     lane :build do
+#       gradle(task: "assembleRelease")
+#     end
 #   desc "Runs all the tests"
 #   lane :test do
 #     gradle(task: "test")
@@ -39,4 +39,14 @@ platform :android do
 #     gradle(task: "clean assembleRelease")
 #     upload_to_play_store
 #   end
+    desc "Deploy a new version to the Google Play Store"
+    lane :deploy do
+      gradle(task: "clean assembleRelease")
+      supply(
+        track: "production", # or 'beta', 'alpha', 'internal', etc.
+    #     aab: "app/build/outputs/bundle/release/app-release.aab" # or
+        apk: "app/build/outputs/apk/release/app-release.apk"
+      )
+end
+
 end
