@@ -40,13 +40,13 @@ jobs:
           brew install fastlane
 
       - name: Run Fastlane lane
-        run: fastlane deploy
+        run: fastlane build
         env:
           KEYSTORE_PASSWORD: ${{ secrets.GOOGLE_PLAY_JSON }}
 
-#      - name: Upload artifacts
-#        if: success()
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: app-release.aab
-#          path: app/build/outputs/bundle/release/app-release.aab
+      - name: Upload artifacts
+        if: success()
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-release-unsigned.apk
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
