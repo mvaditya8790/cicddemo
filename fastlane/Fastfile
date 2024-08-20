@@ -44,7 +44,7 @@ platform :android do
       gradle(task: "clean assembleRelease")
       supply(
         json_key: ENV['SUPPLY_JSON_KEY'],
-        track: "beta", # or 'beta', 'alpha', 'internal', etc.
+        track: "alpha", # or 'beta', 'alpha', 'internal', etc.
 #         aab: "app/build/outputs/bundle/release/app-release.aab" # or
         apk: "app/build/outputs/apk/release/app-release.apk"
       )
