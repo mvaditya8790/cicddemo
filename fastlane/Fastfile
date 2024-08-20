@@ -35,6 +35,14 @@ platform :android do
       File.open("fastlane-key.json", "w") do |file|
         file.write(json_data)
       end
+
+      # Print the file path
+      UI.message "JSON file written to: #{File.absolute_path(json_file_path)}"
+
+       # Print the content of the fastlane-key.json file
+      UI.message "Contents of fastlane-key.json:"
+      UI.message File.read("fastlane-key.json")
+
       supply(
         json_key: "fastlane-key.json",
         track: "alpha", # or 'beta', 'alpha', 'internal', etc.
