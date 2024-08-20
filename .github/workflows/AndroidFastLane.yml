@@ -20,6 +20,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Decode and save Google Play JSON file
+        run: |
+            echo "${{ secrets.GOOGLE_PLAY_JSON }}" > $HOME/fastlane-key.json
+
       - name: Cache Gradle packages
         uses: actions/cache@v2
         with:
@@ -37,6 +41,8 @@ jobs:
 
       - name: Run Fastlane lane
         run: fastlane build --verbose
+        env:
+          SUPPLY_JSON_KEY: $HOME/fastlane-key.json
 
 #      - name: Upload artifacts
 #        if: success()
