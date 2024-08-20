@@ -12,6 +12,7 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
+require 'base64'
 
 default_platform(:android)
 
@@ -25,7 +26,7 @@ platform :android do
     lane :deploy do
       gradle(task: "clean assembleRelease")
       supply(
-        json_key_data: ENV['KEYSTORE_PASSWORD'],
+        json_key_data: Base64.decode64(ENV['KEYSTORE_PASSWORD']),
         track: "alpha", # or 'beta', 'alpha', 'internal', etc.
 #         aab: "app/build/outputs/bundle/release/app-release.aab" # or
         apk: "app/build/outputs/apk/release/app-release-unsigned.apk"
