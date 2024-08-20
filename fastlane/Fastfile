@@ -25,7 +25,7 @@ platform :android do
     lane :deploy do
       gradle(task: "clean assembleRelease")
       supply(
-        json_key: ENV['SUPPLY_JSON_KEY'],
+        json_key: ENV['KEYSTORE_PASSWORD'],
         track: "alpha", # or 'beta', 'alpha', 'internal', etc.
         aab: "app/build/outputs/bundle/release/app-release.aab" # or
 #         apk: "app/build/outputs/apk/release/app-release.apk"

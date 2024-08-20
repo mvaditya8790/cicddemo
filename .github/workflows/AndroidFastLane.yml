@@ -40,11 +40,9 @@ jobs:
           brew install fastlane
 
       - name: Run Fastlane lane
-        run: |
-          fastlane build --verbose
-          fastlane deploy
+        run: fastlane deploy
         env:
-          SUPPLY_JSON_KEY: $HOME/fastlane-key.json
+          KEYSTORE_PASSWORD: ${{ secrets.GOOGLE_PLAY_JSON }}
 
       - name: Upload artifacts
         if: success()
