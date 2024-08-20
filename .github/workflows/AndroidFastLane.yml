@@ -36,7 +36,7 @@ jobs:
           brew install fastlane
 
       - name: Run Fastlane lane
-        run: fastlane build
+        run: fastlane build --verbose
 
 #      - name: Upload artifacts
 #        if: success()
