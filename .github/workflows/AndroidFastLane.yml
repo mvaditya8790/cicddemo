@@ -32,7 +32,7 @@ jobs:
       - name: Install Ruby and Fastlane
         run: |
           brew install ruby@3.0
-          homebrew install fastlane
+          brew install fastlane
 
       - name: Run Fastlane lane
         run: fastlane build
