@@ -38,9 +38,9 @@ jobs:
       - name: Run Fastlane lane
         run: fastlane build
 
-      - name: Upload artifacts
-        if: success()
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-release.apk
-          path: app/build/outputs/apk/release/app-release.apk
+#      - name: Upload artifacts
+#        if: success()
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: app-release.apk
+#          path: app/build/outputs/apk/release/app-release.apk

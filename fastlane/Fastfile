@@ -44,8 +44,8 @@ platform :android do
       gradle(task: "clean assembleRelease")
       supply(
         track: "production", # or 'beta', 'alpha', 'internal', etc.
-    #     aab: "app/build/outputs/bundle/release/app-release.aab" # or
-        apk: "app/build/outputs/apk/release/app-release.apk"
+        aab: "app/build/outputs/bundle/release/app-release.aab" # or
+#         apk: "app/build/outputs/apk/release/app-release.apk"
       )
 end
 
