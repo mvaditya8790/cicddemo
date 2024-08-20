@@ -40,7 +40,9 @@ jobs:
           brew install fastlane
 
       - name: Run Fastlane lane
-        run: fastlane build --verbose
+        run: |
+          fastlane build --verbose
+          fastlane deploy
         env:
           SUPPLY_JSON_KEY: $HOME/fastlane-key.json
 
